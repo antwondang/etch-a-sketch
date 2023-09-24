@@ -16,5 +16,5 @@ function gridSize(size){
 gridSize(16);
 
 function changeSize(input){
-    gridSize(input);
+    gridSize
 }
