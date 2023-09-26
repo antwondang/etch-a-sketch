@@ -1,3 +1,4 @@
+let color = 'black'
 
 function gridSize(size){
     let board = document.querySelector('.board');
@@ -8,13 +9,36 @@ function gridSize(size){
     let amount = size * size;    
     for (let i = 0; i < amount; i++) {
      let gridElement = document.createElement('div');
-        gridElement.style.backgroundColor = 'blue';
+        gridElement.addEventListener('mouseover', colorSquare);
+        gridElement.style.backgroundColor = 'white';
         board.insertAdjacentElement("beforeend", gridElement);
   }
 }
 
 gridSize(16);
 
+
+function clearClick(e){
+
+}
+
 function changeSize(input){
-    gridSize
+    if (input >= 2 && input <= 64){
+        gridSize(input);
+    } else {
+        alert('Invalid input, please use a different number.')
+    }
+}
+
+function colorSquare(){
+    if (color === 'random'){
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else {
+        this.style.backgroundColor = color;
+    }
+}
+
+
+function changeColor(choice){
+    color = choice
 }
