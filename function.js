@@ -18,8 +18,10 @@ function gridSize(size){
 gridSize(16);
 
 
-function clearClick(e){
-
+function clearClick(){
+    let board = document.querySelector('.board');
+    let square = document.querySelectorAll('div');
+    square.forEach((div) => div.style.backgroundColor = 'white');
 }
 
 function changeSize(input){
