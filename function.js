@@ -1,7 +1,10 @@
 let color = 'black'
+let click = true;
 
 function gridSize(size){
     let board = document.querySelector('.board');
+    let squares = board.querySelectorAll('div');
+    squares.forEach((div) => div.remove())
     board.style.gridTemplateColumns = `repeat(${size} , 1fr)`;
     board.style.gridTemplateRows = `repeat(${size} , 1fr)`;
 
@@ -20,7 +23,7 @@ gridSize(16);
 
 function clearClick(){
     let board = document.querySelector('.board');
-    let square = document.querySelectorAll('div');
+    let square = board.querySelectorAll('div');
     square.forEach((div) => div.style.backgroundColor = 'white');
 }
 
@@ -33,14 +36,22 @@ function changeSize(input){
 }
 
 function colorSquare(){
-    if (color === 'random'){
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    } else {
-        this.style.backgroundColor = color;
+    if (click) {
+        if (color === 'random') {
+         this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        } else {
+         this.style.backgroundColor = color;
+        }
     }
 }
 
 
+
+
 function changeColor(choice){
-    color = choice
+    color = choice;
 }
+
+document.querySelector('body').addEventListener("click", () => {
+    click = !click;
+})
