@@ -19,6 +19,7 @@
     background-color: var(--secondary-light);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     float: left;
+    margin-left: 15%;
 }
 
 .button {
@@ -27,16 +28,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-right: 15%;
 }
 
 .size-button {
     float: right;
+    margin-right: 15%;
 }
 
-.content {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 button,
 input[type='color'] {
@@ -52,3 +52,4 @@ input[type='color']:active {
   transition: transform 0.05s ease-in-out;
   transform: scale(1);
 }
+
